@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './App.css';
+import codingDSImg  from './img/meteo.png';
 
 function App() {
   const [cityName, setCityName] = useState("");
@@ -23,9 +25,11 @@ function App() {
   };
 
   return (
-    <div>
-      <input type="text" onChange={handleInputChange} />
-      <button onClick={handleButtonClick}>Get Weather</button>
+    <div className="container">
+      
+      <img src={codingDSImg} className="meteo"></img>
+      <input className="text" type="text" onChange={handleInputChange} />
+      <button className="button" onClick={handleButtonClick}>Get Weather</button>
       {weatherData && (
         <div>
           <p>City: {weatherData.name}</p>
